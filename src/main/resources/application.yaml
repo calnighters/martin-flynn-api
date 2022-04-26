@@ -6,8 +6,6 @@ spring:
     url: jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:30306}/${DATABASE_NAME:martin-flynn}
     username: ${DATABASE_USERNAME:root}
     password: ${DATABASE_PASSWORD:password}
-    hikari:
-      maximum-pool-size: 5
   jpa:
     hibernate:
       naming:
