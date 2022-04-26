@@ -10,6 +10,11 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  security:
+    user:
+      name: ADMIN_USERNAME
+      password: ${ADMIN_PASSWORD:test}
+      roles: ADMIN
 server:
   port: ${PORT:8090}
   tomcat:
@@ -32,3 +37,7 @@ server:
       file-date-format:
   ssl:
     enabled: false
+
+securedroutes:
+  unsecured: ["/martin-flynn"]
+  secured: ["/martin-flynn/**"]
