@@ -1,0 +1,36 @@
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DATABASE_HOST:localhost}:30306/${DATABASE_NAME:martin-flynn}?serverTimezone=UTC}
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:password}
+    hikari:
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+server:
+  port: ${PORT:8090}
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: '{
+      "@timestamp":"%{begin:yyyy-MM-dd}tT%{begin:HH:mm:ss.SSSZ}t",
+      "responseBytes":"%b",
+      "protocol":"%H",
+      "method":"%m",
+      "responseStatus":%s,
+      "urlPath":"%U",
+      "responseTime":%D,
+      "processingTime":%F,
+      "correlationId":"%{Correlation-Id}i",
+      "userAgent":"%{User-Agent}i"}'
+      directory: /dev
+      suffix:
+      prefix: "stdout"
+      file-date-format:
+  ssl:
+    enabled: false
