@@ -1,6 +1,6 @@
 package com.martinflynn.api.service;
 
-import com.martinflynn.api.dto.GetResponseDto;
+import com.martinflynn.api.dto.TestimonialResponseDto;
 import com.martinflynn.api.dto.TestimonialDto;
 import com.martinflynn.api.model.Testimonial;
 import com.martinflynn.api.repository.TestimonialRepository;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ApiServiceImpl implements ApiService {
+public class TestimonialServiceImpl implements TestimonialService {
 
   private final TestimonialRepository repository;
 
@@ -28,8 +28,8 @@ public class ApiServiceImpl implements ApiService {
   }
 
   @Override
-  public GetResponseDto getAllEntries() {
-    return GetResponseDto.builder()
+  public TestimonialResponseDto getAllEntries() {
+    return TestimonialResponseDto.builder()
         .testimonials(
             StreamSupport
                 .stream(repository.findAll().spliterator(), false)

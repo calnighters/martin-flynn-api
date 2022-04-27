@@ -39,5 +39,5 @@ server:
     enabled: false
 
 securedroutes:
-  unsecured: ["/martin-flynn"]
+  unsecured: ["/martin-flynn/testimonial", "/martin-flynn/price"]
   secured: ["/martin-flynn/**"]

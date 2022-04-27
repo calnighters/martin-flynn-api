@@ -1,13 +1,13 @@
 package com.martinflynn.api.service;
 
-import com.martinflynn.api.dto.GetResponseDto;
+import com.martinflynn.api.dto.TestimonialResponseDto;
 import com.martinflynn.api.dto.TestimonialDto;
 
-public interface ApiService {
+public interface TestimonialService {
 
   void addEntry(TestimonialDto requestDto);
 
-  GetResponseDto getAllEntries();
+  TestimonialResponseDto getAllEntries();
 
   void deleteEntry(Integer id);
 }

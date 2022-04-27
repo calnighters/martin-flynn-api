@@ -6,7 +6,7 @@ import lombok.Value;
 
 @Value
 @Builder
-public class GetResponseDto {
+public class TestimonialResponseDto {
 
   List<TestimonialDto> testimonials;
 }
